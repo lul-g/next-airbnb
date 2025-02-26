@@ -1,36 +1,59 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Airbnb Clone
 
-## Getting Started
+A feature-rich Airbnb clone built using modern web technologies including **Next.js**, **Tailwind CSS**, **Prisma**, and **MongoDB**. This project replicates the core functionalities of Airbnb, focusing on performance, scalability, and user experience.
 
-First, run the development server:
+## Application URL
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+Check out the live demo here: [Airbnb Clone Live](https://your-deployed-app-url.com)
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Features
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- **User Authentication:**
+  - Secure user login and registration using NextAuth.js for session management.
+  
+- **Property Listings:**
+  - Users can browse and filter property listings by location, availability, and other criteria.
+  
+- **Property Details:**
+  - Detailed view of each listing with images, descriptions, and amenities.
+  
+- **Booking System:**
+  - Users can book properties with real-time availability checks.
+  
+- **User Profiles:**
+  - Personalized profiles displaying booking history, favorite listings, and account details.
+  
+- **Responsive Design:**
+  - Mobile-first design using Tailwind CSS, ensuring a seamless experience across all devices.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Tech Stack
 
-## Learn More
+- **Frontend:** [Next.js](https://nextjs.org/) for server-side rendering and dynamic routing.
+- **Styling:** [Tailwind CSS](https://tailwindcss.com/) for a utility-first responsive design.
+- **Backend:** Next.js API routes with [Prisma](https://www.prisma.io/) as the ORM.
+- **Database:** [MongoDB](https://www.mongodb.com/) for scalable NoSQL database management.
+- **Authentication:** [NextAuth.js](https://next-auth.js.org/) for session-based authentication.
 
-To learn more about Next.js, take a look at the following resources:
+## Installation
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/your-username/airbnb-clone.git
+   cd airbnb-clone
+2. Install dependencies
+    ```bash
+    npm install
+3. Set up environment variables: Create a .env file in the root directory and add the following:
+    ```bash
+    DATABASE_URL=your_mongodb_connection_string
+    NEXTAUTH_SECRET=your_secret
+4. Run database migrations:
+    ```bash
+    npx prisma migrate dev
+5. Start the development server:
+    ```bash
+    npm run dev
+6. Open your browser: Navigate to http://localhost:3000 to explore the application.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## License
+This project is licensed under the MIT License. See the LICENSE file for details.
