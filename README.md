@@ -4,7 +4,7 @@ A feature-rich Airbnb clone built using modern web technologies including **Next
 
 ## Application URL
 
-Check out the live demo here: [Airbnb Clone Live](https://your-deployed-app-url.com)
+Check out the live demo here: [Airbnb Clone Live](https://airbnb-lul.vercel.app/)
 
 ## Features
 
