@@ -7,7 +7,10 @@ interface IParams {
   listingId?: string;
 }
 
-export async function POST(request: Request, { params }: { params: IParams }) {
+export async function POST(
+  request: Request,
+  { params }: { params: Promise<IParams> }
+) {
   const currentUser = await getCurrentUser();
 
   if (!currentUser) {
@@ -20,7 +23,7 @@ export async function POST(request: Request, { params }: { params: IParams }) {
     throw new Error('Invalid ID');
   }
 
-  let favoriteIds = [...(currentUser.favoriteIds || [])];
+  const favoriteIds = [...(currentUser.favoriteIds || [])];
 
   favoriteIds.push(listingId);
 
@@ -38,7 +41,7 @@ export async function POST(request: Request, { params }: { params: IParams }) {
 
 export async function DELETE(
   request: Request,
-  { params }: { params: IParams }
+  { params }: { params: Promise<IParams> }
 ) {
   const currentUser = await getCurrentUser();
 

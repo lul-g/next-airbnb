@@ -2,7 +2,7 @@
 
 import React from 'react';
 import Container from '../Container';
-import { TbBeach, TbMountain, TbPool } from 'react-icons/tb';
+import { TbBeach, TbPool } from 'react-icons/tb';
 import { MdOutlineVilla } from 'react-icons/md';
 import {
   GiBarn,
@@ -10,7 +10,6 @@ import {
   GiCactus,
   GiCastle,
   GiCaveEntrance,
-  GiForest,
   GiForestCamp,
   GiIsland,
   GiWindmill,

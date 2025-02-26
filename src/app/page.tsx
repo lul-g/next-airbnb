@@ -1,17 +1,18 @@
+export const dynamic = 'force-dynamic';
+
 import ClientOnly from '@/components/ClientOnly';
 import Container from '@/components/Container';
 import { EmptyState } from '@/components/EmptyState';
-import Image from 'next/image';
 import getListings, { IListingsParams } from './actions/getListings';
 import getCurrentUser from './actions/getCurrentUser';
 import { ListingCard } from '@/components/listings/ListingCard';
 import { SafeListing } from './types';
 
 interface HomeProps {
-  searchParams: IListingsParams;
+  searchParams: Promise<IListingsParams>;
 }
 export default async function Home({ searchParams }: HomeProps) {
-  const listings = await getListings(searchParams);
+  const listings = await getListings(await searchParams);
   const currentUser = await getCurrentUser();
 
   if (listings?.length === 0) {

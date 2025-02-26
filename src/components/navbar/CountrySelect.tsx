@@ -11,6 +11,12 @@ export type CountrySelectValue = {
   value: string;
 };
 
+interface OptionType {
+  flag: string;
+  label: string;
+  region: string;
+}
+
 interface CountrySelectProps {
   value?: CountrySelectValue;
   onChange: (value: CountrySelectValue) => void;
@@ -27,7 +33,7 @@ const CountrySelect: React.FC<CountrySelectProps> = ({ value, onChange }) => {
         options={getAll()}
         value={value}
         onChange={(value) => onChange(value as CountrySelectValue)}
-        formatOptionLabel={(option: any) => (
+        formatOptionLabel={(option: OptionType) => (
           <div className="flex flex-row items-center gap-3">
             <div>{option.flag}</div>
             <div>

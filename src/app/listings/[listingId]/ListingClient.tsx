@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useCallback, useEffect, useMemo, useState } from 'react';
-import { SafeListing, safeReservation, SafeUser } from '@/app/types';
+import { SafeListing, SafeReservation, SafeUser } from '@/app/types';
 import { categories } from '@/components/navbar/Categories';
 import Container from '@/components/Container';
 import { ListingHead } from './ListingHead';
@@ -13,7 +13,6 @@ import axios from 'axios';
 import toast from 'react-hot-toast';
 import { ListingReservation } from '@/components/listings/ListingReservation';
 import { Range } from 'react-date-range';
-import { ErrorStateProps } from '@/app/error';
 
 const intialDateRange = {
   startDate: new Date(),
@@ -22,7 +21,7 @@ const intialDateRange = {
 };
 
 interface ListingClientProps {
-  reservations?: safeReservation[];
+  reservations?: SafeReservation[];
   listing: SafeListing & {
     user: SafeUser;
   };
@@ -136,8 +135,4 @@ export const ListingClient: React.FC<ListingClientProps> = ({
       </div>
     </Container>
   );
-};
-const ErrorState: React.FC<ErrorStateProps> = ({ error }) => {
-  useEffect(() => {});
-  return <div>error</div>;
 };

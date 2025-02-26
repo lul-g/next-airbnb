@@ -1,3 +1,5 @@
+export const dynamic = 'force-dynamic';
+
 import React from 'react';
 import getCurrentUser from '../actions/getCurrentUser';
 import { EmptyState } from '@/components/EmptyState';
@@ -20,7 +22,7 @@ const PropertiesPage = async () => {
     userId: currentUser.id,
   });
 
-  if (listings.length === 0) {
+  if (listings?.length === 0) {
     return (
       <ClientOnly>
         <EmptyState

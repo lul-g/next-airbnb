@@ -1,3 +1,5 @@
+export const dynamic = 'force-dynamic';
+
 import React from 'react';
 import getCurrentUser from '../actions/getCurrentUser';
 import { EmptyState } from '@/components/EmptyState';
@@ -20,7 +22,7 @@ const TripsPage = async () => {
     userId: currentUser.id,
   });
 
-  if (reservations.length === 0) {
+  if (reservations?.length === 0) {
     return (
       <ClientOnly>
         <EmptyState

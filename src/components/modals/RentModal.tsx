@@ -6,7 +6,6 @@ import { useMemo, useState } from 'react';
 import Heading from '../Heading';
 import { categories } from '../navbar/Categories';
 import CategoryInput from '@/components/inputs/CategoryInput';
-import { signIn } from 'next-auth/react';
 import { FieldValues, SubmitHandler, useForm } from 'react-hook-form';
 import CountrySelect from '../navbar/CountrySelect';
 import dynamic from 'next/dynamic';
@@ -66,10 +65,10 @@ const RentModal = () => {
       dynamic(() => import('../Map'), {
         ssr: false,
       }),
-    [location]
+    []
   );
 
-  const setCustomValue = (id: string, value: any) => {
+  const setCustomValue = (id: string, value: unknown) => {
     setValue(id, value, {
       shouldValidate: true,
       shouldDirty: true,
@@ -149,7 +148,7 @@ const RentModal = () => {
         />
         <CountrySelect
           value={location}
-          onChange={(value: any) => setCustomValue('location', value)}
+          onChange={(value: unknown) => setCustomValue('location', value)}
         />
         <Map center={location?.latlng} />
       </div>

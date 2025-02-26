@@ -20,6 +20,17 @@ enum STEPS {
   INFO = 2,
 }
 
+type StringifiableQuery = {
+  [key: string]: string | number | boolean | null | undefined;
+};
+
+type UpdatedQuery = StringifiableQuery & {
+  locationValue?: string | null;
+  guestCount?: number;
+  roomCount?: number;
+  bathroomCount?: number;
+};
+
 export const SearchModal = () => {
   const router = useRouter();
   const params = useSearchParams();
@@ -41,7 +52,7 @@ export const SearchModal = () => {
       dynamic(() => import('../Map'), {
         ssr: false,
       }),
-    [location]
+    []
   );
 
   const onBack = useCallback(() => {
@@ -63,7 +74,7 @@ export const SearchModal = () => {
       currentQuery = qs.parse(params.toString());
     }
 
-    const updatedQuery: any = {
+    const updatedQuery: UpdatedQuery = {
       ...currentQuery,
       locationValue: location?.value,
       guestCount,

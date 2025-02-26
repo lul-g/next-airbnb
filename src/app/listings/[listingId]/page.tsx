@@ -9,10 +9,10 @@ import getReservations from '@/app/actions/getReservations';
 interface IParams {
   listingId?: string;
 }
-const ListingPage = async ({ params }: { params: IParams }) => {
-  const listing = await getListingById(params);
+const ListingPage = async ({ params }: { params: Promise<IParams> }) => {
+  const listing = await getListingById(await params);
   const user = await getCurrentUser();
-  const reservations = await getReservations(params);
+  const reservations = await getReservations(await params);
 
   if (!listing) {
     return (

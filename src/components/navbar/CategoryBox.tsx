@@ -9,6 +9,13 @@ interface CategoryBoxProps {
   selected?: boolean;
 }
 
+type StringifiableQuery = {
+  [key: string]: string | number | boolean | null | undefined;
+};
+type UpdatedQuery = StringifiableQuery & {
+  category?: string;
+};
+
 export const CategoryBox: React.FC<CategoryBoxProps> = ({
   icon: Icon,
   label,
@@ -24,7 +31,7 @@ export const CategoryBox: React.FC<CategoryBoxProps> = ({
       currentQuery = qs.parse(params.toString());
     }
 
-    const updatedQuery: any = {
+    const updatedQuery: UpdatedQuery = {
       ...currentQuery,
       category: label,
     };
