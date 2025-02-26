@@ -35,7 +35,7 @@ Check out the live demo here: [Airbnb Clone Live](https://your-deployed-app-url.
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/your-username/airbnb-clone.git
+   git clone https://github.com/lul-g/next-airbnb.git
    cd airbnb-clone
 2. Install dependencies
     ```bash
