@@ -20,9 +20,6 @@ Check out the live demo here: [Airbnb Clone Live](https://your-deployed-app-url.
 - **Booking System:**
   - Users can book properties with real-time availability checks.
   
-- **User Profiles:**
-  - Personalized profiles displaying booking history, favorite listings, and account details.
-  
 - **Responsive Design:**
   - Mobile-first design using Tailwind CSS, ensuring a seamless experience across all devices.
 
